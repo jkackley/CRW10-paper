@@ -1,0 +1,596 @@
+% THIS IS SIGPROC-SP.TEX - VERSION 3.1
+% WORKS WITH V3.2SP OF ACM_PROC_ARTICLE-SP.CLS
+% APRIL 2009
+%
+% It is an example file showing how to use the 'acm_proc_article-sp.cls' V3.2SP
+% LaTeX2e document class file for Conference Proceedings submissions.
+% ----------------------------------------------------------------------------------------------------------------
+% This .tex file (and associated .cls V3.2SP) *DOES NOT* produce:
+%       1) The Permission Statement
+%       2) The Conference (location) Info information
+%       3) The Copyright Line with ACM data
+%       4) Page numbering
+% ---------------------------------------------------------------------------------------------------------------
+% It is an example which *does* use the .bib file (from which the .bbl file
+% is produced).
+% REMEMBER HOWEVER: After having produced the .bbl file,
+% and prior to final submission,
+% you need to 'insert'  your .bbl file into your source .tex file so as to provide
+% ONE 'self-contained' source file.
+%
+% Questions regarding SIGS should be sent to
+% Adrienne Griscti ---> griscti@acm.org
+%
+% Questions/suggestions regarding the guidelines, .tex and .cls files, etc. to
+% Gerald Murray ---> murray@hq.acm.org
+%
+% For tracking purposes - this is V3.1SP - APRIL 2009
+
+\documentclass{acm_proc_article-sp}
+
+\begin{document}
+
+\title{Agent HairDO}
+% \subtitle{[Extended Abstract]
+% \titlenote{A full version of this paper is available as
+% \textit{Author's Guide to Preparing ACM SIG Proceedings Using
+% \LaTeX$2_\epsilon$\ and BibTeX} at
+% \texttt{www.acm.org/eaddress.htm}}}
+%
+% You need the command \numberofauthors to handle the 'placement
+% and alignment' of the authors beneath the title.
+%
+% For aesthetic reasons, we recommend 'three authors at a time'
+% i.e. three 'name/affiliation blocks' be placed beneath the title.
+%
+% NOTE: You are NOT restricted in how many 'rows' of
+% "name/affiliations" may appear. We just ask that you restrict
+% the number of 'columns' to three.
+%
+% Because of the available 'opening page real-estate'
+% we ask you to refrain from putting more than six authors
+% (two rows with three columns) beneath the article title.
+% More than six makes the first-page appear very cluttered indeed.
+%
+% Use the \alignauthor commands to handle the names
+% and affiliations for an 'aesthetic maximum' of six authors.
+% Add names, affiliations, addresses for
+% the seventh etc. author(s) as the argument for the
+% \additionalauthors command.
+% These 'additional authors' will be output/set for you
+% without further effort on your part as the last section in
+% the body of your article BEFORE References or any Appendices.
+
+\numberofauthors{4} %  in this sample file, there are a *total*
+% of EIGHT authors. SIX appear on the 'first-page' (for formatting
+% reasons) and the remaining two appear in the \additionalauthors section.
+%
+\author{
+% You can go ahead and credit any number of authors here,
+% e.g. one 'row of three' or two rows (consisting of one row of three
+% and a second row of one, two or three).
+%
+% The command \alignauthor (no curly braces needed) should
+% precede each author name, affiliation/snail-mail address and
+% e-mail address. Additionally, tag each line of
+% affiliation/address with \affaddr, and tag the
+% e-mail address with \email.
+%
+% 1st. author
+\alignauthor
+Jeremy Kackley\\
+       \affaddr{Noetic Strategies, Inc}\\
+       \affaddr{P.O. Box 22225}\\
+       \affaddr{Huntsville, AL 35814}\\
+       \email{jeremy.kackley@gmail.com}
+% 2nd. author
+\alignauthor
+James Jacobs\\
+       \affaddr{Jackson State University/CDID}\\
+       \affaddr{1230 Raymond Rd.}\\
+       \affaddr{Jackson, MS 39204}\\
+       \email{jjacobs@c-did.com}
+% 3rd. author
+\and
+\alignauthor 
+Paulus Wahjudi\\
+       \affaddr{Weisberg Division of Engineering \& Computer Science}\\
+       \affaddr{Marshall University}\\
+       \affaddr{Huntington, WV 25755}\\
+       \email{wahjudi@marshall.edu}
+% \and  % use '\and' if you need 'another row' of author names
+% 4th. author
+\alignauthor 
+Jean Gourd\\
+       \affaddr{Louisiana Tech University}\\
+       \affaddr{Center for Secure Cyberspace}\\
+       \affaddr{P.O. Box 10348}\\
+       \affaddr{Ruston, LA 71272}\\
+       \email{jgourd@latech.edu}
+% There's nothing stopping you putting the seventh, eighth, etc.
+% author on the opening page (as the 'third row') but we ask,
+% for aesthetic reasons that you place these 'additional authors'
+% in the \additional authors block, viz.
+% \additionalauthors{Additional authors: John Smith (The Th{\o}rv{\"a}ld Group,
+% email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
+% (The Kumquat Consortium, email: {\texttt{jpkumquat@consortium.net}}).}
+}
+\date{30 July 1999}
+% Just remember to make sure that the TOTAL number of authors
+% is the number that will appear on the first page PLUS the
+% number that will appear in the \additionalauthors section.
+
+\maketitle
+\begin{abstract}
+Blah.
+\end{abstract}
+
+% A category with the (minimum) three required fields
+% \category{H.4}{Information Systems Applications}{Miscellaneous}
+%A category including the fourth, optional field follows...
+% \category{D.2.8}{Software Engineering}{Metrics}[complexity measures, performance measures]
+
+% \terms{Theory}
+
+% \keywords{ACM proceedings, \LaTeX, text tagging} % NOT required for Proceedings
+
+\section{Introduction}
+note: Introduction to the conceptual view of an MA framework. (IE adding passive-attacker detection to the framework) -- so really this is just an introduction at a general level (MA, framework, cyber security, computer forensics, etc).
+
+note: introduction consists of the old idea to bring it back in the brain and to identify the area of focus (passive attacks, identification of compromised nodes, agents and /or systems..)
+
+note: also the idea of packet tagging...background research then introduce the idea of pollination (both ways--nodes and packets)
+
+One of the weakness in the mobile agent infrastructure for detecting and combating compromised platforms (ref to original paper) is the inability to detect compromised nodes that are passively intercepting information.
+
+note: then introduce it into the framework/whatever we call it and how it might work within the agent thingy
+
+The concept of pollination is designed to create a series of trail markers on both the nodes visited by a mobile agent and mobile agent itself. The trail markers allow immediate identification of what node the agent has visited by simple inspection of the pollen the agent is carrying. The location of the node inspection is trivially the destination (last location) and by traversing the trail of pollen back to the source Node one can trace the historical record of where the Agent has been.
+
+The information provided by pollination is meant for both historical and active. Historical information can be used to determine the sequence of event after and event has occurred. Active information is used form real time inspection to determine if and event has occured.
+
+For example, in a lot of cases the data and the code that processes the data by themselves are not sensitive. However, the ability to get both the data and the code has the potential to cause harm the company. If I mark both of these nodes and have each node in the network sensitive to this situation a mobile agent contain pollen for both locations can apprehended.
+
+Security in information system is an important aspect that cover for all applications that covers three main components: data security, machine security and network security. One of the key problem is authentication of an entity in relation to their access to various resources. A trusted entity might become compromised, and thus untrustworthy, despite being positively identified.  Determining if an entity has been compromised is an important but complicated process. This paper introduces the pollination concept that extends the Detect and Combat Compromised Platforms (DCCP) framework [ ] capability to detect compromised platforms that passively intercept information.
+
+\section{Framework Overview}
+The framework to Detect and Combat Compromised Platforms in a Mobile Agent Infrastructure [ ] laid out an agent based framework for detecting compromised platforms.  The key aspect of this framework was the concept of threat levels.  Threat levels correspond to a global view of how dangerous the situation is, as well as a controlling factor for the operation of the framework.  These levels range from One, which can be considered ‘situation normal’ where strictly passive observation occurs, to Four where action is taken against suspected nodes.  
+
+\subsection{Threat Level One: Network Observation}
+This corresponds to situation normal and is the default threat level.  The key action that takes place at this threat level is establishing and maintaining a network of ‘probe’ agents.  These probes can be thought of as a distributed set of eyes and ears.  This threat level also sees the establishment of a Central Authority Node (CAN).  This node can be thought of as the nerve center of the framework; and as agents percolate through the network they carry reports generated by the probes.  These reports ultimately are carried to the CAN which makes judgements based on them.  In this way, the CAN can monitor and maintain a somewhat out-of-date view of the entire network at a relatively low cost to performance.  This view can be used to search for anomalies, such as a disproportionate number of agents arriving to those leaving a given node.  Anomalies are domain-dependent.  A certain level of anomalies is expected as a by product of network behavior, thus a threshold value $T_1$ is defined which indicates the maximum amount of anomalies to be expected in an non-compromised network.  Rates above this value would constitute an elevation of the threat level.
+
+\subsection{Threat Level Two: Network Suspected Compromise Investigation}
+At this threat level the network is suspected to be compromised.  This leads the CAN to generate new agent types:  Commander and Detective Agents.  Commander agents can be considered a localized CAN; the purpose of which is to reduce report latency.  Detective agents are proactive versions of the probes that communicate observations directly to their commander agent.  The concept here is to blockade the suspected node or nodes and investigate incoming and outgoing traffic to see if the anomalies are still occurring greater than the threshold value.   There is a network effect whereby any nodes that can only communicate through a suspected node are of course also suspect and cannot be trusted; thus the virtual blockade could comprise a major section of the network.  The CAN takes into account this network effect when placing Detective agents so as not to compromise the aggregate data.  Another important point is that this is merely an investigative roadblock; communication is investigated and monitored, but is not stopped.  Again, anomalies are domain dependent, but it makes logical sense that there would be more types of anomalies defined at this level.  Additionally, $T_2$ is the second threshold value of anomaly detection prior to elevation to the third threat level.
+
+\subsection{Threat Level Three: Network Compromise Confirmation}
+This threat level sees the creation of an additional type of agent, the Secret Agent.  The Secret agent is something of a sacrificial agent.  Its actions (and the expected results thereof) are predefined however; ergo it can be send to the compromised node, and if the results are not observed exterior to the node, or its communication of its observed effects do not match the observations of detective agents, then an inference can be made that compromise has occurred.  It is possible that the Secret agent would never be heard from again, in which case this process must be repeated until either the agent survives, or a set number of agents have been sacrificed.  It is possible at this layer either to elevate to level four, or to deescalate if the Secret agent is not interfered with.
+
+\subsection{Threat Level Four: Network Compromise Resolution}
+For the final threat level, the assumption is that compromise has occurred.  There are a variety of actions that can be taken at this point.  The appropriate action is very domain dependent; if resource availability is more important than information security, then simply alerting a human while continuing to gather information is the appropriate response.  Alternatively, if information security is more important than availability, or redundant resources exist, then automated responses are possible.  The least severe response would be rerouting requests from the compromised node to a sandbox for future analysis and to prevent the compromise of the rest of the network; presumably without making it obvious to the attacker that he has been detected.  A more severe action would be to blockade that node from the network, preventing any requests from leaving or going to that node.  The most severe would be attempting to remove that node from the network and/or crash it, such as via a distributed denial of service attack or some out of band signal.  
+
+DCCP infrastructure is an effective method to detect and combat compromised platforms. The progressive network threat level allows for a dynamic and adaptive detection with varying degree of response. Once a platform is suspected of being compromised, the node and any nodes that comes in contact will be thoroughly investigated before a verdict is given. Depending on the algorithm used to observe the network traffic, DCCP can be adapted to observe the smallest piece of data or it can focus the network as whole. However, DCCP is dependent on one key element which is the active data packets send by the compromised platform that the framework can then intercept and detect for irregularities. In the event that a compromised platform is passive and focus only in intercepting information routed through it without actively sending packets to other nodes as an attempt to obtain information and/or to infect other nodes, DCCP will never suspect that node as being compromised. This weakness will be addressed in this paper through the utilization of a Mobile Agents Pollination (MAP) technique. 
+
+\section{Mobile Agents Pollination (MAP)}
+Mobile Agents Pollination (MAP) is a concept to address some of the issues with combating compromised platforms previously discussed [] by identifying a mobile agent’s movement and actions within a network. MAP uses pollen to uniquely identify the agencies or groups of agencies within a network and uses pollination to form a trail map defining the path an agent utilized when visiting the agency nodes. In addition to the trail map, the pollen and map properties can also be utilized as action indicators to infer the meaning of the agent’s visitations and the agencies intent within the network.
+
+MAP is similar to the natural process of flower pollination by bees. Bees traverse a field of flowers to acquire nectar. The bee stops at each flower and inadvertently collects pollen and distributes pollen to the flower. A pollen grain represents a flower and a collection of pollen on the bee represents all the flowers the bee has visited. The pollen collection left by the bee at each flower represents the sequence of flowers visitations before acquiring nectar at the current flower. The analogy follows for MAP with the mobile agent as the bee, the nectar as the information and the pollen as an identification marker of a particular agency node.  The mobile agent traversing a network of connected nodes to acquire information.  MAP defines the process were the mobile agent inadvertently collects pollen from the current node and distribute pollen from the previous nodes visited. The pollen can then be used to quickly map where the mobile agent has traveled and the sequence of travel. Other traits related to the map, the pollen, and the pollen grains relationship to the agency node can be utilized to expand the perceptibility of the mobile agent’s activity in the network.    
+
+The main purpose of MAP is to utilize pollination for tracking of mobile agent’s activity in the network and use the tracking information to infer the intent of the mobile agent and the agencies involved in the network.  Pollen is a marker used to identify a specific node a mobile agent may visit. Pollination is the process of exchanging pollen to provide a mechanism to reconstruct where the agent has been and infer the actions the agent performed.
+
+The pollen can be unique to each node or the pollen can be unique for a section depending on requirements. The pollen variation throughout the network is similar to the DNA of a flower. The DNA for a specific node type is mostly the same between entities with minor variations making the sequence unique. The pollen from two different node types will have a greater variation in the predominating factors. The pollen is an identification of a node and should be a dependent on the agency configuration to make the process of spoofing an agency difficult. The information provided by pollination is meant for both historical and active. Historical information can be used to determine the sequence of event after an event has occurred. Active information is used form real time inspection to determine if an event has occurred.
+
+The two key observable parameter categories involved in the process of a mobile agent collecting information from the agencies are spatial and temporal. The space for MAP refers to the network space in direction used by the agency node, the connection, the mobile agent, and the pollen.  The spatial category could be expanded to include distance for the connection and the agents travel, however at this time it is unclear on the usage and necessity of the metric.  
+
+The network spatial reference is depicted with standard network nodal reference with connections showing the relation between the nodes.  The pollen associated with the nodes and the agents will be represented by patterns. The pollen grains cared by the mobile agent and distributed to the agencies maintain the pattern of the origin node.  The sequence of pollen grains creates a series of trail markers which define the spatial movements of the agent through the network.  A direction depicted by the arrow is inherent in the sequence as the agent moved from the preceding nodes to reach the current node location. The pattern allows immediate identification of what node(s) the agent has visited by simple inspection of the pollen the agent is carrying. Traversing the trail of pollen defined by the sequence will lead back to the source node.
+
+Time for MAP is used to refer to the amount of processing the mobile agent expended at the agency node in terms of number of pollen grains. The number of grains refers to the action time of the agent, such as time spent, data examined, or a ratio of time spent and data examined.  The number is associated with a grain of a specific node and the combination of all the grain counts will indicate the time taken for the sequence to complete. A common time reference will maintain a standard gauge for use with the analytics. The actual time interval is up to the implementation, however the granularity of the interval should represent the difference between operation actions of the mobile agents for the operations we want to identify.  The temporal reference is depicted by a count below the grains.
+
+We acquire a time-sequence pattern by applying both the spatial and temporal components.  The time-sequence pattern maps the networks meaning to the goal of the mobile agent’s movement.  The spatial, temporal and spatial-temporal observations are used to infer the meaning of the action with regard to the agent and nodes intent. Associating the nodes content description with the pattern may allow for further identification of the mobile agents actions.  
+
+The process of pollination leaves two distinct time-sequence trails as the mobile agent moves from node to node. The first trail is the set of pollen attached the agent from the nodes visited. The second set is distributed along the path of nodes traveled were each node has a snapshot of the previous places the agent has been. The sets have a number of key attributes including: node references, number of pollen spores, sequence of spores and the order (pattern) of nodes visited, amount of pollen attached. The pollination concept is depicted in Fig. 1.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.45]{AgentPollen-Example}
+\caption{Pollination and Mobile Agents}
+\end{figure}
+
+Example: Figure 1 has an example of an agent moving from Node 1 to 5. The agent at each node exchanges pollen with the agency in the process of doing work. The amount of work is quantified with the temporal reference. The agent reaches Node 5 and the resulting pattern is depicted with the temporal references (2, 5, 10, and 3). Note that Node 6 is not path and no pollen is exchange with either the node or the agent. The example could be used as base pattern or a composite of patterns can be used to determine anomalies that occur with either the agent’s or the node’s standard operation.  
+
+\subsection{Usage for DCCP}
+In order to address the passive attack we simply have analytics to infer the meaning of the change in pattern. For example, we have a passive node that inserts itself into the network. The node will have to understand that pollination occurs otherwise the agency node would not be accepted. We will assume they are smart enough to spoof a node to insert it to continue with more advanced security concerns.  
+
+Let’s say we mark the path agents would take from Node 1 to Node 4 in Fig. 2 by marking each of the intermediate nodes with different pollen.  Every-time and agent reaches Node 4, I have a sequence of Pollen that corresponds to the path taken. I verify this with the sequence that the agent was suppose to follow to determine if the agent has been compromised by either a additional passive node or a violation of the agent code. The passive node is identified by added pollen, incorrect pollen, or the lack there of in the sequence inspected at the end point. A Commander / Detective team can be used determine which node is the passive node and eliminate it. For compromised agents I can simply eliminate them at Node A or Node B on arrival and trigger the inspection. For added security I can make every node along the path check the pollen sequence and in essence have a passive defense mechanism against corruption.
+
+\subsection{Implementation}
+The pollination process works at the application level where the agencies represent the nodes and the mobile agents move throughout the network hoping from agency to agency. The agencies each have their own pollen definition. Implementing the pollen requires the ability to attach pollen and transport pollen with the mobile agent and read and written by the agencies.  It is proposed that process of attaching the pollen to the mobile agent is outside of the agent itself to stick with the inadvertent nature of pollination. The agent himself should not know or care about the pollination. We envision the use of the manipulation of the Open System Interconnection (OSI) model’s transport layer for both attaching the pollen to the agent and transporting the pollen and agent to the destination agency. In the OSI model the application data to be transported is broken into packets and transmitted from the source to the destination. We can add additional packets by appending the pollen to the data stream or we can manipulate the packets using packet tagging. Adding additional packets can be accomplished at the application by simply appending to the end of the mobile agent in that data stream. The addendum is removed at the agency and the pollen is recovered.
+
+Packet tagging is accomplished Packet tagging marks packets with identifiers for local purpose [http://www.openbsd.org/faq/pf/tagging.html]. The actual mark is part of the packet and cannot be removed. The mark can be modified or replaced with another mark which maybe an issue if the agent is transmitted external to the system. However, for our purposes the mobile agent is assumed to remain internal.
+
+In addition to the pollen tag itself the count representing action at each node is used to acquire further insight into the meaning. It is expected that a node with little information to share we require less time for the mobile agent to visit the node (less activity). Using the activity gauge we can infer some of the intent of both the agent and the agency.  In the example of a passive node scenario we can expect the sharing to be minimal with the agent as described by the 0 for the agent with regard to the passive nodes pattern.
+
+The reverse is also possible with the relationship between the node pattern and the data stored at the node. Using this relationship between the information of the node with the highest activity we can infer the type of information the agent is interested in gathering and the information with little interest.  The entire concept is depicted in Figure 2.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.45]{AgentPollen-PassivenodeA}
+\caption{Network with Passive Node}
+\end{figure}
+
+The purpose of pollination is to allow and easy identification method for activity within a mobile agent environment using pollination patterns. Any standard inference model, Fuzzy Logic, Neural Network, Bayesian can be utilized to trigger DCCP security events from the pollination patterns.
+
+Variation to the scheme can be accomplished to acquire different levels of security through the network. At a low level we are only general concerned with sensitive data or application. For this level we only need to pollinate those locations and track the movement of agents caring that pollen. Agencies are always active to interpret the meaning of the Mobile agents and the surrounding agencies. The limitation of the pollination to a subset of the network has the effect of greater focus ability on only the things that matter. It also reduces the overhead associated with pollination in both time and space.
+
+We can change the pollination patterns associated with the network on a periodic basis to ensure security. This change can either be notified to the DCCP security team in advance or the change could simply trigger and event and allows the team to determine the appropriate action. The later is preferable as the addition of a mechanism to disable security for changing patterns could be an exploit. The event triggered by the pattern change can be used as a test of system integrity as the process goes through the security levels and back to level 1 afterward.
+
+The standard state of the system is in DCCP Level 1 most of the time, however as security concerns increase the number of pollinated nodes increase to match the threat. The increase can either be focus tactically on the relative sensitivity of the data or the increase can be distributed throughout the network to get a big picture look at the secured environment. At the highest level all node will be pollinated and nodes without pollen or agent’s not containing pollen will be apprehended. The pollination paths not adhering to the required patterns will be examined to determine what event took place by the DCCP security agent team.
+
+\subsection{Detecting passive compromised nodes with pollination}
+Once pollination is in the framework, we can then proceed to setup a set of traps that will assist in detecting compromised passive nodes. The idea of the trap is to lure passive nodes to actively search for a  prized data that in turn will expose their cover. The Central Authority Node (CAN) will randomly select a set of strategic node of interest (SNI) throughout the network as a the host of the prized data. Each trap will have a designated area of effect that determines the number of nodes that are affected. CAN will then send agents to each nodes with the objective of broadcasting the existence of a crucial data in the SNI. The CAN will then observe network activities and validate the pollens of every agents that visited the SNI, when an invalid pollen pattern is found, CAN will then raise the network situational awareness into threat level two and then proceed to investigate the path taken by the agent to reach the SNI. Every nodes that the suspected agent have come in contact with will then be considered as a suspected compromised node. The Commander Agent and Detective Agents will then proceed the investigation to confirm whether a node is compromised through level three. 
+
+\section{Mole Example}
+
+\section{Conclusion and Future Work}
+The role of the pollens can be expanded to include various additional functionality. A heavy burst of pollens in short intervals can affect a compromised node, making it ineffective and possibly shutting it down or forcing the node to restart which could purge the compromising elements. Another plausible feature is the pollen’s ability to affect agent’s functionality or to modify the data and rendering it useless. A predetermined set of pollen colors could have different hidden emergency message that will be relayed by each host to the CAN. The simple coloring scheme can act as a silent alarm that notifies the CAN for a possible breach in one or more nodes.
+
+
+
+
+
+% \subsection{Type Changes and {\subsecit Special} Characters}
+% We have already seen several typeface changes in this sample.  You
+% can indicate italicized words or phrases in your text with
+% the command \texttt{{\char'134}textit}; emboldening with the
+% command \texttt{{\char'134}textbf}
+% and typewriter-style (for instance, for computer code) with
+% \texttt{{\char'134}texttt}.  But remember, you do not
+% have to indicate typestyle changes when such changes are
+% part of the \textit{structural} elements of your
+% article; for instance, the heading of this subsection will
+% be in a sans serif\footnote{A third footnote, here.
+% Let's make this a rather short one to
+% see how it looks.} typeface, but that is handled by the
+% document class file. Take care with the use
+% of\footnote{A fourth, and last, footnote.}
+% the curly braces in typeface changes; they mark
+% the beginning and end of
+% the text that is to be in the different typeface.
+% 
+% You can use whatever symbols, accented characters, or
+% non-English characters you need anywhere in your document;
+% you can find a complete list of what is
+% available in the \textit{\LaTeX\
+% User's Guide}\cite{Lamport:LaTeX}.
+% 
+% \subsection{Math Equations}
+% You may want to display math equations in three distinct styles:
+% inline, numbered or non-numbered display.  Each of
+% the three are discussed in the next sections.
+
+% \subsubsection{Inline (In-text) Equations}
+% A formula that appears in the running text is called an
+% inline or in-text formula.  It is produced by the
+% \textbf{math} environment, which can be
+% invoked with the usual \texttt{{\char'134}begin. . .{\char'134}end}
+% construction or with the short form \texttt{\$. . .\$}. You
+% can use any of the symbols and structures,
+% from $\alpha$ to $\omega$, available in
+% \LaTeX\cite{Lamport:LaTeX}; this section will simply show a
+% few examples of in-text equations in context. Notice how
+% this equation: \begin{math}\lim_{n\rightarrow \infty}x=0\end{math},
+% set here in in-line math style, looks slightly different when
+% set in display style.  (See next section).
+% 
+% \subsubsection{Display Equations}
+% A numbered display equation -- one set off by vertical space
+% from the text and centered horizontally -- is produced
+% by the \textbf{equation} environment. An unnumbered display
+% equation is produced by the \textbf{displaymath} environment.
+% 
+% Again, in either environment, you can use any of the symbols
+% and structures available in \LaTeX; this section will just
+% give a couple of examples of display equations in context.
+% First, consider the equation, shown as an inline equation above:
+% \begin{equation}\lim_{n\rightarrow \infty}x=0\end{equation}
+% Notice how it is formatted somewhat differently in
+% the \textbf{displaymath}
+% environment.  Now, we'll enter an unnumbered equation:
+% \begin{displaymath}\sum_{i=0}^{\infty} x + 1\end{displaymath}
+% and follow it with another numbered equation:
+% \begin{equation}\sum_{i=0}^{\infty}x_i=\int_{0}^{\pi+2} f\end{equation}
+% just to demonstrate \LaTeX's able handling of numbering.
+% 
+% \subsection{Citations}
+% Citations to articles \cite{bowman:reasoning, clark:pct, braams:babel, herlihy:methodology},
+% conference
+% proceedings \cite{clark:pct} or books \cite{salas:calculus, Lamport:LaTeX} listed
+% in the Bibliography section of your
+% article will occur throughout the text of your article.
+% You should use BibTeX to automatically produce this bibliography;
+% you simply need to insert one of several citation commands with
+% a key of the item cited in the proper location in
+% the \texttt{.tex} file \cite{Lamport:LaTeX}.
+% The key is a short reference you invent to uniquely
+% identify each work; in this sample document, the key is
+% the first author's surname and a
+% word from the title.  This identifying key is included
+% with each item in the \texttt{.bib} file for your article.
+% 
+% The details of the construction of the \texttt{.bib} file
+% are beyond the scope of this sample document, but more
+% information can be found in the \textit{Author's Guide},
+% and exhaustive details in the \textit{\LaTeX\ User's
+% Guide}\cite{Lamport:LaTeX}.
+% 
+% This article shows only the plainest form
+% of the citation command, using \texttt{{\char'134}cite}.
+% This is what is stipulated in the SIGS style specifications.
+% No other citation format is endorsed.
+% 
+% \subsection{Tables}
+% Because tables cannot be split across pages, the best
+% placement for them is typically the top of the page
+% nearest their initial cite.  To
+% ensure this proper ``floating'' placement of tables, use the
+% environment \textbf{table} to enclose the table's contents and
+% the table caption.  The contents of the table itself must go
+% in the \textbf{tabular} environment, to
+% be aligned properly in rows and columns, with the desired
+% horizontal and vertical rules.  Again, detailed instructions
+% on \textbf{tabular} material
+% is found in the \textit{\LaTeX\ User's Guide}.
+% 
+% Immediately following this sentence is the point at which
+% Table 1 is included in the input file; compare the
+% placement of the table here with the table in the printed
+% dvi output of this document.
+% 
+% \begin{table}
+% \centering
+% \caption{Frequency of Special Characters}
+% \begin{tabular}{|c|c|l|} \hline
+% Non-English or Math&Frequency&Comments\\ \hline
+% \O & 1 in 1,000& For Swedish names\\ \hline
+% $\pi$ & 1 in 5& Common in math\\ \hline
+% \$ & 4 in 5 & Used in business\\ \hline
+% $\Psi^2_1$ & 1 in 40,000& Unexplained usage\\
+% \hline\end{tabular}
+% \end{table}
+% 
+% To set a wider table, which takes up the whole width of
+% the page's live area, use the environment
+% \textbf{table*} to enclose the table's contents and
+% the table caption.  As with a single-column table, this wide
+% table will ``float" to a location deemed more desirable.
+% Immediately following this sentence is the point at which
+% Table 2 is included in the input file; again, it is
+% instructive to compare the placement of the
+% table here with the table in the printed dvi
+% output of this document.
+% 
+% 
+% \begin{table*}
+% \centering
+% \caption{Some Typical Commands}
+% \begin{tabular}{|c|c|l|} \hline
+% Command&A Number&Comments\\ \hline
+% \texttt{{\char'134}alignauthor} & 100& Author alignment\\ \hline
+% \texttt{{\char'134}numberofauthors}& 200& Author enumeration\\ \hline
+% \texttt{{\char'134}table}& 300 & For tables\\ \hline
+% \texttt{{\char'134}table*}& 400& For wider tables\\ \hline\end{tabular}
+% \end{table*}
+% % end the environment with {table*}, NOTE not {table}!
+% 
+% \subsection{Figures}
+% Like tables, figures cannot be split across pages; the
+% best placement for them
+% is typically the top or the bottom of the page nearest
+% their initial cite.  To ensure this proper ``floating'' placement
+% of figures, use the environment
+% \textbf{figure} to enclose the figure and its caption.
+% 
+% This sample document contains examples of \textbf{.eps}
+% and \textbf{.ps} files to be displayable with \LaTeX.  More
+% details on each of these is found in the \textit{Author's Guide}.
+% 
+% \begin{figure}
+% \centering
+% \epsfig{file=fly.eps}
+% \caption{A sample black and white graphic (.eps format).}
+% \end{figure}
+% 
+% \begin{figure}
+% \centering
+% \epsfig{file=fly.eps, height=1in, width=1in}
+% \caption{A sample black and white graphic (.eps format)
+% that has been resized with the \texttt{epsfig} command.}
+% \end{figure}
+% 
+% 
+% As was the case with tables, you may want a figure
+% that spans two columns.  To do this, and still to
+% ensure proper ``floating'' placement of tables, use the environment
+% \textbf{figure*} to enclose the figure and its caption.
+% 
+% Note that either {\textbf{.ps}} or {\textbf{.eps}} formats are
+% used; use
+% the \texttt{{\char'134}epsfig} or \texttt{{\char'134}psfig}
+% commands as appropriate for the different file types.
+% 
+% \subsection{Theorem-like Constructs}
+% Other common constructs that may occur in your article are
+% the forms for logical constructs like theorems, axioms,
+% corollaries and proofs.  There are
+% two forms, one produced by the
+% command \texttt{{\char'134}newtheorem} and the
+% other by the command \texttt{{\char'134}newdef}; perhaps
+% the clearest and easiest way to distinguish them is
+% to compare the two in the output of this sample document:
+% 
+% This uses the \textbf{theorem} environment, created by
+% the\linebreak\texttt{{\char'134}newtheorem} command:
+% \newtheorem{theorem}{Theorem}
+% \begin{theorem}
+% Let $f$ be continuous on $[a,b]$.  If $G$ is
+% an antiderivative for $f$ on $[a,b]$, then
+% \begin{displaymath}\int^b_af(t)dt = G(b) - G(a).\end{displaymath}
+% \end{theorem}
+% 
+% The other uses the \textbf{definition} environment, created
+% by the \texttt{{\char'134}newdef} command:
+% \newdef{definition}{Definition}
+% \begin{definition}
+% If $z$ is irrational, then by $e^z$ we mean the
+% unique number which has
+% logarithm $z$: \begin{displaymath}{\log e^z = z}\end{displaymath}
+% \end{definition}
+% 
+% \begin{figure}
+% \centering
+% \psfig{file=rosette.ps, height=1in, width=1in,}
+% \caption{A sample black and white graphic (.ps format) that has
+% been resized with the \texttt{psfig} command.}
+% \end{figure}
+% 
+% Two lists of constructs that use one of these
+% forms is given in the
+% \textit{Author's  Guidelines}.
+% 
+% \begin{figure*}
+% \centering
+% \epsfig{file=flies.eps}
+% \caption{A sample black and white graphic (.eps format)
+% that needs to span two columns of text.}
+% \end{figure*}
+% and don't forget to end the environment with
+% {figure*}, not {figure}!
+%  
+% There is one other similar construct environment, which is
+% already set up
+% for you; i.e. you must \textit{not} use
+% a \texttt{{\char'134}newdef} command to
+% create it: the \textbf{proof} environment.  Here
+% is a example of its use:
+% \begin{proof}
+% Suppose on the contrary there exists a real number $L$ such that
+% \begin{displaymath}
+% \lim_{x\rightarrow\infty} \frac{f(x)}{g(x)} = L.
+% \end{displaymath}
+% Then
+% \begin{displaymath}
+% l=\lim_{x\rightarrow c} f(x)
+% = \lim_{x\rightarrow c}
+% \left[ g{x} \cdot \frac{f(x)}{g(x)} \right ]
+% = \lim_{x\rightarrow c} g(x) \cdot \lim_{x\rightarrow c}
+% \frac{f(x)}{g(x)} = 0\cdot L = 0,
+% \end{displaymath}
+% which contradicts our assumption that $l\neq 0$.
+% \end{proof}
+% 
+% Complete rules about using these environments and using the
+% two different creation commands are in the
+% \textit{Author's Guide}; please consult it for more
+% detailed instructions.  If you need to use another construct,
+% not listed therein, which you want to have the same
+% formatting as the Theorem
+% or the Definition\cite{salas:calculus} shown above,
+% use the \texttt{{\char'134}newtheorem} or the
+% \texttt{{\char'134}newdef} command,
+% respectively, to create it.
+% 
+% \subsection*{A {\secit Caveat} for the \TeX\ Expert}
+% Because you have just been given permission to
+% use the \texttt{{\char'134}newdef} command to create a
+% new form, you might think you can
+% use \TeX's \texttt{{\char'134}def} to create a
+% new command: \textit{Please refrain from doing this!}
+% Remember that your \LaTeX\ source code is primarily intended
+% to create camera-ready copy, but may be converted
+% to other forms -- e.g. HTML. If you inadvertently omit
+% some or all of the \texttt{{\char'134}def}s recompilation will
+% be, to say the least, problematic.
+% 
+% \section{Conclusions}
+% This paragraph will end the body of this sample document.
+% Remember that you might still have Acknowledgments or
+% Appendices; brief samples of these
+% follow.  There is still the Bibliography to deal with; and
+% we will make a disclaimer about that here: with the exception
+% of the reference to the \LaTeX\ book, the citations in
+% this paper are to articles which have nothing to
+% do with the present subject and are used as
+% examples only.
+% %\end{document}  % This is where a 'short' article might terminate
+% 
+% %ACKNOWLEDGMENTS are optional
+% \section{Acknowledgments}
+% This section is optional; it is a location for you
+% to acknowledge grants, funding, editing assistance and
+% what have you.  In the present case, for example, the
+% authors would like to thank Gerald Murray of ACM for
+% his help in codifying this \textit{Author's Guide}
+% and the \textbf{.cls} and \textbf{.tex} files that it describes.
+
+%
+% The following two commands are all you need in the
+% initial runs of your .tex file to
+% produce the bibliography for the citations in your paper.
+\bibliographystyle{abbrv}
+\bibliography{sigproc}  % sigproc.bib is the name of the Bibliography in this case
+% You must have a proper ".bib" file
+%  and remember to run:
+% latex bibtex latex latex
+% to resolve all references
+%
+% ACM needs 'a single self-contained file'!
+%
+%APPENDICES are optional
+%\balancecolumns
+% \appendix
+%Appendix A
+% \section{Headings in Appendices}
+% The rules about hierarchical headings discussed above for
+% the body of the article are different in the appendices.
+% In the \textbf{appendix} environment, the command
+% \textbf{section} is used to
+% indicate the start of each Appendix, with alphabetic order
+% designation (i.e. the first is A, the second B, etc.) and
+% a title (if you include one).  So, if you need
+% hierarchical structure
+% \textit{within} an Appendix, start with \textbf{subsection} as the
+% highest level. Here is an outline of the body of this
+% document in Appendix-appropriate form:
+% \subsection{Introduction}
+% \subsection{The Body of the Paper}
+% \subsubsection{Type Changes and  Special Characters}
+% \subsubsection{Math Equations}
+% \paragraph{Inline (In-text) Equations}
+% \paragraph{Display Equations}
+% \subsubsection{Citations}
+% \subsubsection{Tables}
+% \subsubsection{Figures}
+% \subsubsection{Theorem-like Constructs}
+% \subsubsection*{A Caveat for the \TeX\ Expert}
+% \subsection{Conclusions}
+% \subsection{Acknowledgments}
+% \subsection{Additional Authors}
+% This section is inserted by \LaTeX; you do not insert it.
+% You just add the names and information in the
+% \texttt{{\char'134}additionalauthors} command at the start
+% of the document.
+% \section{References}
+% Generated by bibtex from your ~.bib file.  Run latex,
+% then bibtex, then latex twice (to resolve references)
+% to create the ~.bbl file.  Insert that ~.bbl file into
+% the .tex source file and comment out
+% the command \texttt{{\char'134}thebibliography}.
+% This next section command marks the start of
+% Appendix B, and does not continue the present hierarchy
+% \section{More Help for the Hardy}
+% The acm\_proc\_article-sp document class file itself is chock-full of succinct
+% and helpful comments.  If you consider yourself a moderately
+% experienced to expert user of \LaTeX, you may find reading
+% it useful but please remember not to change it.
+\balancecolumns
+% That's all folks!
+\end{document}
