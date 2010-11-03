@@ -139,17 +139,28 @@ note: Introduction to the conceptual view of an MA framework. (IE adding passive
 
 note: introduction consists of the old idea to bring it back in the brain and to identify the area of focus (passive attacks, identification of compromised nodes, agents and /or systems..)
 
-note: also the idea of packet tagging...background research then introduce the idea of pollination (both ways--nodes and packets)
+
 
 One of the weakness in the mobile agent infrastructure for detecting and combating compromised platforms (ref to original paper) is the inability to detect compromised nodes that are passively intercepting information.
 
-note: then introduce it into the framework/whatever we call it and how it might work within the agent thingy
+The ability to identify passive attackers, compromised agency nodes, compromised agents and /or systems in the DCCP framework requires the ability detect anomalies and /or changes in the mobile agent network and associate these changes to a specific threat. Several techniques exist in the mobile agent research community to eliminate the ability of the network to change by hardening the network. Other techniques rely on the ability to detect, trace and eliminate the anomalies in either the network or the agents. 
+ 
+Most of the work for Mobile agent security is focused on hardening the agent or the agencies against attack. The focus is on encryption or encapsulation techniques to harden the agent or agencies from the ability. These techniques are demonstrated in [1,4]. The problem with encryption or hardening techniques is that they only buy time before the information is decoded or cracks develop in the hardened shell compromising the mobile agent network. The general technique to by extra time is to change the defense faster than the time it takes to crack the system. The problem with this approach is the in ability to actually detect a failure in the defense in a timely manner. For example, a passive node could simply collect data for a period of time long enough to break the defense and after which have little chance of being detected.  
+
+Other techniques for Mobile Agent protection rely on identifying and eliminating the threat. The identification mechanism will mark the agent or the transmission of the agent with watermarks [2] or packet tags[]. The watermarks or tags can be used to identify the movements of agents by leaving traces to follow back to the source of the anomaly with passive tracking. 
+
+The problems with these techniques are the limited focus does not look at patterns for the entire network. They only compare changes for individual instances. In order to address passive nodes the ability to determine changes in agents and the agents movement, the agencies and the agencies intent
+Other tracking requires active involvement and transmission of activity to determine the mobile agent's status [3]. Although the active tracking does give a better picture of the mobile agent network status the active scheme mandates a lot of communication overhead.
+
+The proposed pollination scheme is a passive system to allow minimum overhead with active monitoring to provide near real-time discovery of the mobile agent networks status. Pollination involves the exchange of pollen between the mobile agent and the agency to provide a tracking and a pattern mechanism for use with inference modeling. The pollen allows form tracking an individual agent's movements and intentions and the pollination patterns in both the agent and the agencies all for network and agency status to be inferred. The inference model will then classify the intent and the security protocols in DCCP will be in acted based on the perceived intent. Scaling of the pollination model allows for the overhead to be minimized to the level of the threat. 
 
 The concept of pollination is designed to create a series of trail markers on both the nodes visited by a mobile agent and mobile agent itself. The trail markers allow immediate identification of what node the agent has visited by simple inspection of the pollen the agent is carrying. The location of the node inspection is trivially the destination (last location) and by traversing the trail of pollen back to the source Node one can trace the historical record of where the Agent has been.
 
 The information provided by pollination is meant for both historical and active. Historical information can be used to determine the sequence of event after and event has occurred. Active information is used form real time inspection to determine if and event has occured.
 
 For example, in a lot of cases the data and the code that processes the data by themselves are not sensitive. However, the ability to get both the data and the code has the potential to cause harm the company. If I mark both of these nodes and have each node in the network sensitive to this situation a mobile agent contain pollen for both locations can apprehended.
+
+
 
 Security in information system is an important aspect that cover for all applications that covers three main components: data security, machine security and network security. One of the key problem is authentication of an entity in relation to their access to various resources. A trusted entity might become compromised, and thus untrustworthy, despite being positively identified.  Determining if an entity has been compromised is an important but complicated process. This paper introduces the pollination concept that extends the Detect and Combat Compromised Platforms (DCCP) framework [ ] capability to detect compromised platforms that passively intercept information.
 
