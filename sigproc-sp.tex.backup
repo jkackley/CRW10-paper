@@ -219,390 +219,50 @@ In order to address passive attack we simply have analytics to infer the meaning
 Suppose we mark the path agents would take from Node~1 to Node~4 (see Figure~\ref{fig:map-eg}) by marking each of the intermediate nodes with different pollen.  Every time an agent reaches Node~4, it possesses a sequence of pollen that corresponds to the path taken.  This is verified with the sequence that the agent was supposed to follow in order to determine if the agent has been compromised by an additional passive node or a violation of the agent code.  The passive node is identified by added pollen, incorrect pollen or simply the lack of pollen in the sequence inspected at the destination node.  A team of {\it Commanders} and {\it Detectives} can be used determine which node is the passive node and eliminate it.  Compromised agents can simply be eliminated from the system at Node~A or Node~B upon arrival and trigger the inspection*****.  For added security, every node along the path checks the pollen sequence and essentially provides a passive defense mechanism against corruption.
 
 \subsection{Implementation}
-The pollination process works at the application level where the agencies represent the nodes and mobile agents move throughout the network migrating from agency to agency.  The agencies each have their own unique pollen definition.  Implementing the pollen requires the ability to attach pollen and transport it with the mobile agent; it is {\it picked up} and {\it dropped off} by the agencies.  We propose that the process of attaching the pollen to the mobile agent is not performed by the agent itself in order to stick with the inadvertent nature of pollination (?).  The agent should not know or care about the pollination.  We envision the use of the manipulation of the Open System Interconnection (OSI) \cite{} model's transport layer for both attaching the pollen to the agent and transporting the pollen and agent to the destination node.  In the OSI model the application data to be transported is broken into packets and transmitted from the source to the destination.  We can add additional packets by appending the pollen to the data stream, or we can manipulate the packets using packet tagging.  Adding additional packets can be accomplished at the application level by simply appending to the end of the mobile agent in that data stream.  The addendum is removed at the agency and the pollen is recovered.
+The pollination process works at the application level where the agencies represent the nodes and mobile agents move throughout the network migrating from node to node.  The nodes each have their own unique pollen definition.  Implementing the pollen requires the ability to attach pollen and transport it with the mobile agent; it is {\it picked up} and {\it dropped off} by the nodes.  We propose that the process of attaching the pollen to the mobile agent is not performed by the agent itself in order to maintain a correlation to the natural process of pollination (with bees and flowers).  The agent should not know or care about how pollination works.  We envision the use of the manipulation of the Open System Interconnection (OSI) model's transport layer \cite{} for both attaching the pollen to the agent and transporting the pollen and agent to the destination node.  In the OSI model, the application data to be transported is broken into packets and transmitted from source to destination.  We can add additional packets by appending the pollen to the data stream, or we can manipulate the packets using packet tagging (e.g., \cite{belenky03, djemaiel07}).  Adding additional packets can be accomplished at the application level by simply appending to the end of the mobile agent in that data stream.  The addendum is removed at the node and the pollen is recovered.
 
-Packet tagging is accomplished by marking packets with identifiers for local purposes \cite{}.  The actual mark is part of the packet and cannot be removed; however, the mark can be modified or replaced with another mark.  This maybe an issue if the agent is transmitted to some location that is external to the system.  However, for our purposes the mobile agent is assumed to remain internally within the network.
+Packet tagging is accomplished by marking packets with identifiers for local purposes.  The actual mark is part of the packet and cannot be removed; however, the mark can be modified or replaced with another mark.  This maybe an issue if the agent is transmitted to some location that is external to the system*****.  However, for our purposes the mobile agent is assumed to remain internally within the network.
 
-In addition to the pollen tag itself, the count representing action at each node is used to acquire further insight into the meaning.  It is expected that a node with little information to share will require less time for the mobile agent to visit the node (i.e., less activity).  Using the activity gauge, we can infer some of the intent of both the agent and the agency.  In the example of a passive node scenario, we can expect the sharing to be minimal for the agent (as described by the label ``0'' in Figure~\ref{fig:map-eg}) with regard to the passive node's pollen.
+In addition to the pollen tag itself, the count representing action at each node is used to acquire further insight into the meaning of*****.  It is expected that a node with little information to share will require less time for the mobile agent to visit the node (i.e., less activity).  Using the activity gauge, we can infer some of the intent of both the agent and the node.  In the example of a passive node scenario, we can expect the sharing to be minimal for the agent (as described by the label ``0'' in Figure~\ref{fig:map-eg}) with regard to the passive node's pollen.
 
-The reverse is also possible with the relationship between the node pollen and the data stored at the node.  Using this relationship between the information of the node with the highest activity, we can infer the type of information the agent is interested in gathering and the information with little interest.  The entire concept is depicted in Figure~\ref{fig:map-eg}.
+The reverse is also possible with the relationship between the node's pollen and the data stored at the node.  Using this relationship between the information of the node with the highest activity, we can infer the type of information the agent is interested in gathering and the information with little interest.  The entire concept is depicted in Figure~\ref{fig:map-eg}.
 
-The purpose of pollination is to allow an easy identification method for activity within a mobile agent environment using pollination patterns.  Any standard inference model (e.g., fuzzy logic, neural network, Bayesian model) can be utilized to trigger DCCP security events from the pollination patterns.
+The purpose of pollination is to allow an easy identification method for activity within a multi-agent system using pollination patterns.  Any standard inference model (e.g., fuzzy logic, neural network, Bayesian model) can be utilized to trigger MAIDS security events from the pollination patterns.
 
-A variation of the scheme can be implemented to acquire different levels of security through the network.  At a low level we are only concerned with sensitive data or applications.  For this level we simply need to pollinate those locations and track the movement of agents carying that pollen.  Agencies are always active to interpret the meaning of the mobile agents and the surrounding agencies.  The limitation of the pollination to a subset of the network has the effect of greater focusability on only the things that matter.  It also reduces the overhead associated with pollination in both time and space.
+A variation of the scheme can be implemented to acquire different levels of security throughout the network.  At a low level we are only concerned with sensitive data or applications.  For this we simply need to pollinate those locations and track the movement of agents carying that pollen.  Nodes are always active to interpret the meaning of the mobile agents and the surrounding nodes.  The limitation of the pollination to a subset of the network has the effect of greater focusability on only the things that matter.  It also reduces the overhead associated with pollination in both time and space*****.  Furthermore, we can change the pollination patterns associated with the network on a periodic basis to ensure security.  This change can either be notified to the MAIDS security team in advance or it could simply trigger an event that allows the team to determine the appropriate action.  The latter is preferable as the addition of a mechanism to disable security for changing patterns could be an exploitable vulnerability.  The event triggered by the pattern change can be used as a test of system integrity as the process goes through the security levels and back to Threat Level 1.
 
-We can change the pollination patterns associated with the network on a periodic basis to ensure security.  This change can either be notified to the DCCP security team in advance or the change could simply trigger an event that allows the team to determine the appropriate action.  The latter is preferable as the addition of a mechanism to disable security for changing patterns could be an exploitable vulnerability.  The event triggered by the pattern change can be used as a test of system integrity as the process goes through the security levels and back to Threat Level 1.
+The state of the system primarily resides at Threat Level 1; however, as security concerns increase, the number of pollinated nodes increase to match the threat.  The increase can either be tactically focused on the relative sensitivity of the data or it can be distributed throughout the network to provide a ``big picture'' of the secured environment.  At the highest level all nodes will be pollinated, and nodes without pollen or agents not containing pollen will be apprehended.  The pollination paths not adhering to the required patterns will be examined to determine what events took place by the MAIDS security team.
 
-The standard state of the system is primarily in Threat Level 1; however, as security concerns increase, the number of pollinated nodes increase to match the threat.  The increase can either be tactically focused on the relative sensitivity of the data or the increase can be distributed throughout the network to provide a ``big picture'' of the secured environment.  At the highest level all nodes will be pollinated, and nodes without pollen or agents not containing pollen will be apprehended.  The pollination paths not adhering to the required patterns will be examined to determine what events took place by the DCCP security agent team.
+\subsection{Detecting Passive Nodes with Pollination}
+Once pollination is in the framework, we can then proceed to setup a set of traps that will assist in detecting passive nodes.  The purpose of the trap is to lure passive nodes to actively search for prized data that, in turn, will expose their cover.  The CAN will randomly select a set of strategic nodes of interest (SNI) throughout the network as the host of the prized data.  Each trap will have a designated area of effect that determines the number of nodes that are affected.  The CAN will then send agents to each node with the objective of broadcasting the existence of crucial data in the SNI.  It will then observe network activities and validate the pollen of every agent that visited the SNI.  When an invalid pollen pattern is found, the CAN will raise the network situational awareness to Threat Level 2 and proceed to investigate the path taken by the agent to reach the SNI.  Every node that the suspected agent came in contact with will then be considered a suspected node.  {\it Commanders} and {\it Detectives} will then proceed the investigation to confirm whether a node is compromised through Threat Level 3.
 
-\subsection{Detecting passive compromised nodes with pollination}
-Once pollination is in the framework, we can then proceed to setup a set of traps that will assist in detecting compromised passive nodes.  The purpose of the trap is to lure passive nodes to actively search for prized data that, in turn, will expose their cover.  The CAN will randomly select a set of strategic nodes of interest (SNI) throughout the network as the host of the prized data.  Each trap will have a designated area of effect that determines the number of nodes that are affected.  CAN will then send agents to each node with the objective of broadcasting the existence of crucial data in the SNI.  The CAN will then observe network activities and validate the pollen of every agent that visited the SNI.  When an invalid pollen pattern is found, CAN will then raise the network situational awareness to Threat Level 2 and then proceed to investigate the path taken by the agent to reach the SNI.  Every node that the suspected agent came in contact with will then be considered a suspected compromised node.  The Commander agent and Detective agents will then proceed the investigation to confirm whether a node is compromised through Threat Level 3.
+*****elaborate*****
 
-\section{Mole Example}
-Blah.
+\section{The ``Mole'' Example}
+We have illustrated the use of pollination within MAIDS to assist in the detection of passive nodes (and attackers).  However, there are many other uses for pollination; such a method can be used to detect other kinds of attacks.  Take, for example, an insider threat and consider the following scenario: an organization's management is noticing that its main competitor frequently releases a product that is very similar to and directly competing with releases of their own--and it is doing so a few weeks prior to its own release dates.  One might suspect that an insider is leaking information (and possibly being paid for it).  How might the management of this organization determine if this is indeed happening and, if so, who is leaking the intellectual property?
+
+By implementing MAIDS with pollination within the organization's network, we would be able to detect such an event and narrow down the leak to a subset of nodes (and possibly determine who the leak is).  The solution requires an approach from two directions: from within the MAIDS framework and from a social engineering standpoint.  One technique to identify an insider threat might be to announce the forthcoming release of a fictitious product whose details are located on a server (or servers) that resides at a particular node (or a subset of nodes) in the network.  As previously stated, the CAN will randomly select a set of SNIs throughout the network that will host the information.  Clearly, the fact that the product is fictitious and will never actually be released is something the management will conceal; this is the social engineering component of the approach.  The idea is to entice the leak to obtain the details of the product while using the MAIDS framework with pollination to identify him.  Pollen is something that uniquely identifies nodes; so to determine the agents that are accessing the fictitious information, we simply generate a unique pattern on the node(s) that provides this information.  There is no need to pollinate from other nodes in the network, as we are uninterested in them at the moment.  Now we simply need to track those agents that are carrying the pollen.  Once polen is being carried around by the agents and is stored on the nodes in the network, we can setup a set of traps that will assist in detecting the leak.  
+
+Since nodes are always active to interpret the meaning of the agents and the surrounding nodes, MAIDS can focus on the leak.  
+
+
+Each trap will have a designated area of effect that determines the number of nodes that are affected.  The CAN will then send agents to each node with the objective of broadcasting the existence of crucial data in the SNI.  It will then observe network activities and validate the pollen of every agent that visited the SNI.  When an invalid pollen pattern is found, the CAN will raise the network situational awareness to Threat Level 2 and proceed to investigate the path taken by the agent to reach the SNI.  Every node that the suspected agent came in contact with will then be considered a suspected node.  {\it Commanders} and {\it Detectives} will then proceed the investigation to confirm whether a node is compromised through Threat Level 3.
+
+*****diagram (Jim?)*****
 
 \section{Conclusion and Future Work}
-The DCCP framework provides the ability to detect, investigate and deal with compromised hosts utilizing a multi-agent scheme in an effective and efficient network intrusion mechanism.  However, DCCP relies heavily on nodes that actively attempt to obtain data that they are not entitled to and tipping their hand in the process.  In the event that an intruder remains passive and only collects data that it unwittingly came across, DCCP will be unable to detect it.  To cover such deficiency, we incorporate pollination into DCCP which provides the ability to detect passive attackers.  As an added bonus, pollination also provides additional forensic capabilities to DCCP (e.g.?).
+The MAIDS framework (introduced in \cite{kackley09}) provides the ability to detect, investigate and deal with compromised nodes utilizing a multi-agent scheme in an effective and efficient network intrusion mechanism.  However, MAIDS relies heavily on nodes that actively attempt to obtain data that they are not entitled to (and tipping their hand in the process).  In the event that an intruder remains passive and only collects data that it unwittingly comes across, MAIDS is unable to detect it.  To address this circumstance, we incorporated pollination into the MAIDS framework in order to provide the ability to detect passive attackers.  As an added bonus, pollination also provides additional forensic capabilities*****.
 
-The role of the pollen can be expanded to include additional functionality.  For example, a heavy burst of pollen issued in short intervals can affect a compromised node, thereby rendering it ineffective and possibly shutting it down or forcing the node to restart which could purge the compromising elements.  Another plausible feature is the pollen's ability to affect an agent's functionality or to modify the data it collects rendering it useless.  A predetermined set of pollen ``colors'' could have different hidden emergency messages that can be relayed by each host to the CAN.  This simple coloring scheme can act as a silent alarm that notifies the CAN for a possible breach in one or more nodes.
+*****elaborate*****
 
-% \subsection{Type Changes and {\subsecit Special} Characters}
-% We have already seen several typeface changes in this sample.  You
-% can indicate italicized words or phrases in your text with
-% the command \texttt{{\char'134}textit}; emboldening with the
-% command \texttt{{\char'134}textbf}
-% and typewriter-style (for instance, for computer code) with
-% \texttt{{\char'134}texttt}.  But remember, you do not
-% have to indicate typestyle changes when such changes are
-% part of the \textit{structural} elements of your
-% article; for instance, the heading of this subsection will
-% be in a sans serif\footnote{A third footnote, here.
-% Let's make this a rather short one to
-% see how it looks.} typeface, but that is handled by the
-% document class file. Take care with the use
-% of\footnote{A fourth, and last, footnote.}
-% the curly braces in typeface changes; they mark
-% the beginning and end of
-% the text that is to be in the different typeface.
-% 
-% You can use whatever symbols, accented characters, or
-% non-English characters you need anywhere in your document;
-% you can find a complete list of what is
-% available in the \textit{\LaTeX\
-% User's Guide}\cite{Lamport:LaTeX}.
-% 
-% \subsection{Math Equations}
-% You may want to display math equations in three distinct styles:
-% inline, numbered or non-numbered display.  Each of
-% the three are discussed in the next sections.
+As this work is still very new, there are a large number of areas we may explore in order to further improve MAIDS.  For example, the role of the pollen can be expanded to include additional functionality.  A heavy burst of pollen issued in short intervals can affect a compromised node, thereby rendering it ineffective and possibly shutting it down or forcing the node to restart (which could purge the compromising elements).  Another plausible feature is the pollen's ability to affect an agent's functionality or to modify the data it collects rendering it useless.  A predetermined set of pollen ``colors'' or patterns could have different hidden emergency messages that can be relayed by each host to the CAN.  This simple coloring scheme can act as a silent alarm that notifies the CAN for a possible breach in one or more nodes.
 
-% \subsubsection{Inline (In-text) Equations}
-% A formula that appears in the running text is called an
-% inline or in-text formula.  It is produced by the
-% \textbf{math} environment, which can be
-% invoked with the usual \texttt{{\char'134}begin. . .{\char'134}end}
-% construction or with the short form \texttt{\$. . .\$}. You
-% can use any of the symbols and structures,
-% from $\alpha$ to $\omega$, available in
-% \LaTeX\cite{Lamport:LaTeX}; this section will simply show a
-% few examples of in-text equations in context. Notice how
-% this equation: \begin{math}\lim_{n\rightarrow \infty}x=0\end{math},
-% set here in in-line math style, looks slightly different when
-% set in display style.  (See next section).
-% 
-% \subsubsection{Display Equations}
-% A numbered display equation -- one set off by vertical space
-% from the text and centered horizontally -- is produced
-% by the \textbf{equation} environment. An unnumbered display
-% equation is produced by the \textbf{displaymath} environment.
-% 
-% Again, in either environment, you can use any of the symbols
-% and structures available in \LaTeX; this section will just
-% give a couple of examples of display equations in context.
-% First, consider the equation, shown as an inline equation above:
-% \begin{equation}\lim_{n\rightarrow \infty}x=0\end{equation}
-% Notice how it is formatted somewhat differently in
-% the \textbf{displaymath}
-% environment.  Now, we'll enter an unnumbered equation:
-% \begin{displaymath}\sum_{i=0}^{\infty} x + 1\end{displaymath}
-% and follow it with another numbered equation:
-% \begin{equation}\sum_{i=0}^{\infty}x_i=\int_{0}^{\pi+2} f\end{equation}
-% just to demonstrate \LaTeX's able handling of numbering.
-% 
-% \subsection{Citations}
-% Citations to articles \cite{bowman:reasoning, clark:pct, braams:babel, herlihy:methodology},
-% conference
-% proceedings \cite{clark:pct} or books \cite{salas:calculus, Lamport:LaTeX} listed
-% in the Bibliography section of your
-% article will occur throughout the text of your article.
-% You should use BibTeX to automatically produce this bibliography;
-% you simply need to insert one of several citation commands with
-% a key of the item cited in the proper location in
-% the \texttt{.tex} file \cite{Lamport:LaTeX}.
-% The key is a short reference you invent to uniquely
-% identify each work; in this sample document, the key is
-% the first author's surname and a
-% word from the title.  This identifying key is included
-% with each item in the \texttt{.bib} file for your article.
-% 
-% The details of the construction of the \texttt{.bib} file
-% are beyond the scope of this sample document, but more
-% information can be found in the \textit{Author's Guide},
-% and exhaustive details in the \textit{\LaTeX\ User's
-% Guide}\cite{Lamport:LaTeX}.
-% 
-% This article shows only the plainest form
-% of the citation command, using \texttt{{\char'134}cite}.
-% This is what is stipulated in the SIGS style specifications.
-% No other citation format is endorsed.
-% 
-% \subsection{Tables}
-% Because tables cannot be split across pages, the best
-% placement for them is typically the top of the page
-% nearest their initial cite.  To
-% ensure this proper ``floating'' placement of tables, use the
-% environment \textbf{table} to enclose the table's contents and
-% the table caption.  The contents of the table itself must go
-% in the \textbf{tabular} environment, to
-% be aligned properly in rows and columns, with the desired
-% horizontal and vertical rules.  Again, detailed instructions
-% on \textbf{tabular} material
-% is found in the \textit{\LaTeX\ User's Guide}.
-% 
-% Immediately following this sentence is the point at which
-% Table 1 is included in the input file; compare the
-% placement of the table here with the table in the printed
-% dvi output of this document.
-% 
-% \begin{table}
-% \centering
-% \caption{Frequency of Special Characters}
-% \begin{tabular}{|c|c|l|} \hline
-% Non-English or Math&Frequency&Comments\\ \hline
-% \O & 1 in 1,000& For Swedish names\\ \hline
-% $\pi$ & 1 in 5& Common in math\\ \hline
-% \$ & 4 in 5 & Used in business\\ \hline
-% $\Psi^2_1$ & 1 in 40,000& Unexplained usage\\
-% \hline\end{tabular}
-% \end{table}
-% 
-% To set a wider table, which takes up the whole width of
-% the page's live area, use the environment
-% \textbf{table*} to enclose the table's contents and
-% the table caption.  As with a single-column table, this wide
-% table will ``float" to a location deemed more desirable.
-% Immediately following this sentence is the point at which
-% Table 2 is included in the input file; again, it is
-% instructive to compare the placement of the
-% table here with the table in the printed dvi
-% output of this document.
-% 
-% 
-% \begin{table*}
-% \centering
-% \caption{Some Typical Commands}
-% \begin{tabular}{|c|c|l|} \hline
-% Command&A Number&Comments\\ \hline
-% \texttt{{\char'134}alignauthor} & 100& Author alignment\\ \hline
-% \texttt{{\char'134}numberofauthors}& 200& Author enumeration\\ \hline
-% \texttt{{\char'134}table}& 300 & For tables\\ \hline
-% \texttt{{\char'134}table*}& 400& For wider tables\\ \hline\end{tabular}
-% \end{table*}
-% % end the environment with {table*}, NOTE not {table}!
-% 
-% \subsection{Figures}
-% Like tables, figures cannot be split across pages; the
-% best placement for them
-% is typically the top or the bottom of the page nearest
-% their initial cite.  To ensure this proper ``floating'' placement
-% of figures, use the environment
-% \textbf{figure} to enclose the figure and its caption.
-% 
-% This sample document contains examples of \textbf{.eps}
-% and \textbf{.ps} files to be displayable with \LaTeX.  More
-% details on each of these is found in the \textit{Author's Guide}.
-% 
-% \begin{figure}
-% \centering
-% \epsfig{file=fly.eps}
-% \caption{A sample black and white graphic (.eps format).}
-% \end{figure}
-% 
-% \begin{figure}
-% \centering
-% \epsfig{file=fly.eps, height=1in, width=1in}
-% \caption{A sample black and white graphic (.eps format)
-% that has been resized with the \texttt{epsfig} command.}
-% \end{figure}
-% 
-% 
-% As was the case with tables, you may want a figure
-% that spans two columns.  To do this, and still to
-% ensure proper ``floating'' placement of tables, use the environment
-% \textbf{figure*} to enclose the figure and its caption.
-% 
-% Note that either {\textbf{.ps}} or {\textbf{.eps}} formats are
-% used; use
-% the \texttt{{\char'134}epsfig} or \texttt{{\char'134}psfig}
-% commands as appropriate for the different file types.
-% 
-% \subsection{Theorem-like Constructs}
-% Other common constructs that may occur in your article are
-% the forms for logical constructs like theorems, axioms,
-% corollaries and proofs.  There are
-% two forms, one produced by the
-% command \texttt{{\char'134}newtheorem} and the
-% other by the command \texttt{{\char'134}newdef}; perhaps
-% the clearest and easiest way to distinguish them is
-% to compare the two in the output of this sample document:
-% 
-% This uses the \textbf{theorem} environment, created by
-% the\linebreak\texttt{{\char'134}newtheorem} command:
-% \newtheorem{theorem}{Theorem}
-% \begin{theorem}
-% Let $f$ be continuous on $[a,b]$.  If $G$ is
-% an antiderivative for $f$ on $[a,b]$, then
-% \begin{displaymath}\int^b_af(t)dt = G(b) - G(a).\end{displaymath}
-% \end{theorem}
-% 
-% The other uses the \textbf{definition} environment, created
-% by the \texttt{{\char'134}newdef} command:
-% \newdef{definition}{Definition}
-% \begin{definition}
-% If $z$ is irrational, then by $e^z$ we mean the
-% unique number which has
-% logarithm $z$: \begin{displaymath}{\log e^z = z}\end{displaymath}
-% \end{definition}
-% 
-% \begin{figure}
-% \centering
-% \psfig{file=rosette.ps, height=1in, width=1in,}
-% \caption{A sample black and white graphic (.ps format) that has
-% been resized with the \texttt{psfig} command.}
-% \end{figure}
-% 
-% Two lists of constructs that use one of these
-% forms is given in the
-% \textit{Author's  Guidelines}.
-% 
-% \begin{figure*}
-% \centering
-% \epsfig{file=flies.eps}
-% \caption{A sample black and white graphic (.eps format)
-% that needs to span two columns of text.}
-% \end{figure*}
-% and don't forget to end the environment with
-% {figure*}, not {figure}!
-%  
-% There is one other similar construct environment, which is
-% already set up
-% for you; i.e. you must \textit{not} use
-% a \texttt{{\char'134}newdef} command to
-% create it: the \textbf{proof} environment.  Here
-% is a example of its use:
-% \begin{proof}
-% Suppose on the contrary there exists a real number $L$ such that
-% \begin{displaymath}
-% \lim_{x\rightarrow\infty} \frac{f(x)}{g(x)} = L.
-% \end{displaymath}
-% Then
-% \begin{displaymath}
-% l=\lim_{x\rightarrow c} f(x)
-% = \lim_{x\rightarrow c}
-% \left[ g{x} \cdot \frac{f(x)}{g(x)} \right ]
-% = \lim_{x\rightarrow c} g(x) \cdot \lim_{x\rightarrow c}
-% \frac{f(x)}{g(x)} = 0\cdot L = 0,
-% \end{displaymath}
-% which contradicts our assumption that $l\neq 0$.
-% \end{proof}
-% 
-% Complete rules about using these environments and using the
-% two different creation commands are in the
-% \textit{Author's Guide}; please consult it for more
-% detailed instructions.  If you need to use another construct,
-% not listed therein, which you want to have the same
-% formatting as the Theorem
-% or the Definition\cite{salas:calculus} shown above,
-% use the \texttt{{\char'134}newtheorem} or the
-% \texttt{{\char'134}newdef} command,
-% respectively, to create it.
-% 
-% \subsection*{A {\secit Caveat} for the \TeX\ Expert}
-% Because you have just been given permission to
-% use the \texttt{{\char'134}newdef} command to create a
-% new form, you might think you can
-% use \TeX's \texttt{{\char'134}def} to create a
-% new command: \textit{Please refrain from doing this!}
-% Remember that your \LaTeX\ source code is primarily intended
-% to create camera-ready copy, but may be converted
-% to other forms -- e.g. HTML. If you inadvertently omit
-% some or all of the \texttt{{\char'134}def}s recompilation will
-% be, to say the least, problematic.
-% 
-% \section{Conclusions}
-% This paragraph will end the body of this sample document.
-% Remember that you might still have Acknowledgments or
-% Appendices; brief samples of these
-% follow.  There is still the Bibliography to deal with; and
-% we will make a disclaimer about that here: with the exception
-% of the reference to the \LaTeX\ book, the citations in
-% this paper are to articles which have nothing to
-% do with the present subject and are used as
-% examples only.
-% %\end{document}  % This is where a 'short' article might terminate
-% 
-% %ACKNOWLEDGMENTS are optional
-% \section{Acknowledgments}
-% This section is optional; it is a location for you
-% to acknowledge grants, funding, editing assistance and
-% what have you.  In the present case, for example, the
-% authors would like to thank Gerald Murray of ACM for
-% his help in codifying this \textit{Author's Guide}
-% and the \textbf{.cls} and \textbf{.tex} files that it describes.
+As noted, the purpose of pollination is to allow an easy identification method for activity within a multi-agent system using pollination patterns.  Any standard inference model (e.g., fuzzy logic, neural network, Bayesian model) can be utilized to trigger MAIDS security events from the pollination patterns.  Such a discussion of models (and perhaps the {\it best} model) is not provided in this paper but merits attention in the future.
 
-%
-% The following two commands are all you need in the
-% initial runs of your .tex file to
-% produce the bibliography for the citations in your paper.
 \nocite{*}
 \bibliographystyle{abbrv}
 \bibliography{sigproc-sp}  % sigproc.bib is the name of the Bibliography in this case
 
-
-% You must have a proper ".bib" file
-%  and remember to run:
-% latex bibtex latex latex
-% to resolve all references
-%
-% ACM needs 'a single self-contained file'!
-%
-%APPENDICES are optional
-%\balancecolumns
-% \appendix
-%Appendix A
-% \section{Headings in Appendices}
-% The rules about hierarchical headings discussed above for
-% the body of the article are different in the appendices.
-% In the \textbf{appendix} environment, the command
-% \textbf{section} is used to
-% indicate the start of each Appendix, with alphabetic order
-% designation (i.e. the first is A, the second B, etc.) and
-% a title (if you include one).  So, if you need
-% hierarchical structure
-% \textit{within} an Appendix, start with \textbf{subsection} as the
-% highest level. Here is an outline of the body of this
-% document in Appendix-appropriate form:
-% \subsection{Introduction}
-% \subsection{The Body of the Paper}
-% \subsubsection{Type Changes and  Special Characters}
-% \subsubsection{Math Equations}
-% \paragraph{Inline (In-text) Equations}
-% \paragraph{Display Equations}
-% \subsubsection{Citations}
-% \subsubsection{Tables}
-% \subsubsection{Figures}
-% \subsubsection{Theorem-like Constructs}
-% \subsubsection*{A Caveat for the \TeX\ Expert}
-% \subsection{Conclusions}
-% \subsection{Acknowledgments}
-% \subsection{Additional Authors}
-% This section is inserted by \LaTeX; you do not insert it.
-% You just add the names and information in the
-% \texttt{{\char'134}additionalauthors} command at the start
-% of the document.
-% \section{References}
-% Generated by bibtex from your ~.bib file.  Run latex,
-% then bibtex, then latex twice (to resolve references)
-% to create the ~.bbl file.  Insert that ~.bbl file into
-% the .tex source file and comment out
-% the command \texttt{{\char'134}thebibliography}.
-% This next section command marks the start of
-% Appendix B, and does not continue the present hierarchy
-% \section{More Help for the Hardy}
-% The acm\_proc\_article-sp document class file itself is chock-full of succinct
-% and helpful comments.  If you consider yourself a moderately
-% experienced to expert user of \LaTeX, you may find reading
-% it useful but please remember not to change it.
 \balancecolumns
 % That's all folks!
 \end{document}
