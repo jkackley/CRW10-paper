@@ -135,9 +135,9 @@ Blah.
 % \keywords{ACM proceedings, \LaTeX, text tagging} % NOT required for Proceedings
 
 \section{Introduction}
-note: Introduction to the conceptual view of an MA framework. (IE adding passive-attacker detection to the framework) -- so really this is just an introduction at a general level (MA, framework, cyber security, computer forensics, etc).
+%note: Introduction to the conceptual view of an MA framework. (IE adding passive-attacker detection to the framework) -- so really this is just an introduction at a general level (MA, framework, cyber security, computer forensics, etc).
 
-note: introduction consists of the old idea to bring it back in the brain and to identify the area of focus (passive attacks, identification of compromised nodes, agents and /or systems..)
+%note: introduction consists of the old idea to bring it back in the brain and to identify the area of focus (passive attacks, identification of compromised nodes, agents and /or systems..)
 
 
 
@@ -234,7 +234,7 @@ Variation to the scheme can be accomplished to acquire different levels of secur
 
 We can change the pollination patterns associated with the network on a periodic basis to ensure security. This change can either be notified to the DCCP security team in advance or the change could simply trigger and event and allows the team to determine the appropriate action. The later is preferable as the addition of a mechanism to disable security for changing patterns could be an exploit. The event triggered by the pattern change can be used as a test of system integrity as the process goes through the security levels and back to level 1 afterward.
 
-The standard state of the system is in DCCP Level 1 most of the time, however as security concerns increase the number of pollinated nodes increase to match the threat. The increase can either be focus tactically on the relative sensitivity of the data or the increase can be distributed throughout the network to get a big picture look at the secured environment. At the highest level all node will be pollinated and nodes without pollen or agent's not containing pollen will be apprehended. The pollination paths not adhering to the required patterns will be examined to determine what event took place by the DCCP security agent team.
+The standard state of the system is in DCCP Level 1 most of the time, however as security concerns increase the number of pollinated nodes increase to match the threat. The increase can either be focus tactically on the relative sensitivity of the data or the increase can be distributed throughout the network to get a big picture look at the secured environment. At the highest level all nodes will be pollinated and nodes without pollen or agent's not containing pollen will be apprehended. The pollination paths not adhering to the required patterns will be examined to determine what event took place by the DCCP security agent team.
 
 \subsection{Detecting passive compromised nodes with pollination}
 Once pollination is in the framework, we can then proceed to setup a set of traps that will assist in detecting compromised passive nodes. The idea of the trap is to lure passive nodes to actively search for a  prized data that in turn will expose their cover. The Central Authority Node (CAN) will randomly select a set of strategic node of interest (SNI) throughout the network as a the host of the prized data. Each trap will have a designated area of effect that determines the number of nodes that are affected. CAN will then send agents to each nodes with the objective of broadcasting the existence of a crucial data in the SNI. The CAN will then observe network activities and validate the pollens of every agents that visited the SNI, when an invalid pollen pattern is found, CAN will then raise the network situational awareness into threat level two and then proceed to investigate the path taken by the agent to reach the SNI. Every nodes that the suspected agent have come in contact with will then be considered as a suspected compromised node. The Commander Agent and Detective Agents will then proceed the investigation to confirm whether a node is compromised through level three. 
@@ -242,7 +242,10 @@ Once pollination is in the framework, we can then proceed to setup a set of trap
 \section{Mole Example}
 
 \section{Conclusion and Future Work}
+The DCCP framework provides the ability to detect , investigate and deal with compromised hosts utilizing a multi agent scheme in an effective and efficient network intrusion mechanism.  However, DCCP relies heavily on nodes that actively tries to obtain data that they are not entitled to and tipping their hand in the process. In the event that an intruder remains passive and only collects data that it came across, DCCP will be unable to detect it. To cover such deficiency, we incorporate Pollination into DCCP which provides, the ability to detect passive attackers. As an added bonus, Pollination also provides additional forensic capabilities to DCCP..
+
 The role of the pollens can be expanded to include various additional functionality. A heavy burst of pollens in short intervals can affect a compromised node, making it ineffective and possibly shutting it down or forcing the node to restart which could purge the compromising elements. Another plausible feature is the pollen's ability to affect agent's functionality or to modify the data and rendering it useless. A predetermined set of pollen colors could have different hidden emergency message that will be relayed by each host to the CAN. The simple coloring scheme can act as a silent alarm that notifies the CAN for a possible breach in one or more nodes.
+\cite{asdf}
 
 
 
@@ -546,8 +549,11 @@ The role of the pollens can be expanded to include various additional functional
 % The following two commands are all you need in the
 % initial runs of your .tex file to
 % produce the bibliography for the citations in your paper.
+\nocite{*}
 \bibliographystyle{abbrv}
-\bibliography{sigproc}  % sigproc.bib is the name of the Bibliography in this case
+\bibliography{sigproc-sp}  % sigproc.bib is the name of the Bibliography in this case
+
+
 % You must have a proper ".bib" file
 %  and remember to run:
 % latex bibtex latex latex
